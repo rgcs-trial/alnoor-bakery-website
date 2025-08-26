@@ -7,7 +7,7 @@
 
 ### Features
 
-- [ ] Project Initialization - Create Astro project with TypeScript `S`
+- [x] Project Initialization - Create Astro project with TypeScript `S`
 - [ ] Package Dependencies - Install Astro, Tailwind, Supabase, and core dependencies `S`
 - [ ] Configuration Setup - Configure astro.config.mjs, tailwind.config.js, tsconfig.json `M`
 - [ ] Directory Structure - Create src/, components/, layouts/, pages/ directories `S`
