@@ -8,10 +8,10 @@
 ### Features
 
 - [x] Project Initialization - Create Astro project with TypeScript `S`
-- [ ] Package Dependencies - Install Astro, Tailwind, Supabase, and core dependencies `S`
-- [ ] Configuration Setup - Configure astro.config.mjs, tailwind.config.js, tsconfig.json `M`
-- [ ] Directory Structure - Create src/, components/, layouts/, pages/ directories `S`
-- [ ] Environment Configuration - Set up .env files and environment variables `S`
+- [x] Package Dependencies - Install Astro, Tailwind, Supabase, and core dependencies `S`
+- [x] Configuration Setup - Configure astro.config.mjs, tailwind.config.js, tsconfig.json `M`
+- [x] Directory Structure - Create src/, components/, layouts/, pages/ directories `S`
+- [x] Environment Configuration - Set up .env files and environment variables `S`
 - [ ] Basic Layout Component - Create base layout with head, navigation structure `M`
 - [ ] Supabase Integration - Configure database client and types `M`
 
