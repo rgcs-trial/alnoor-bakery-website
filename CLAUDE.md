@@ -9,6 +9,7 @@ This is an Astro-based bakery website project that follows Agent OS standards an
 ## Development Environment
 
 ### Tech Stack
+
 - **Framework**: Astro 4.0.0+ with TypeScript 5.0.0+
 - **Package Manager**: pnpm (preferred) or npm
 - **Node.js**: 20.0.0+ LTS
@@ -42,6 +43,7 @@ pnpm test:coverage        # Run tests with coverage report
 ## Architecture
 
 ### Project Structure
+
 ```
 src/
 ├── components/
@@ -67,6 +69,7 @@ src/
 ```
 
 ### Islands Architecture
+
 - Use islands sparingly - most components should be static
 - Interactive components: shopping cart, user authentication, forms
 - Choose appropriate hydration strategies:
@@ -76,7 +79,9 @@ src/
   - `client:hover` - Load on user interaction (tooltips)
 
 ### Content Collections
+
 The project uses Astro's content collections for type-safe content management:
+
 - Blog posts with frontmatter validation
 - Product catalog with schema validation
 - SEO metadata and structured data
@@ -84,6 +89,7 @@ The project uses Astro's content collections for type-safe content management:
 ## Development Guidelines
 
 ### Code Style
+
 - **Indentation**: 2 spaces (never tabs)
 - **Variables/Methods**: snake_case
 - **Classes/Modules**: PascalCase
@@ -92,18 +98,21 @@ The project uses Astro's content collections for type-safe content management:
 - **Comments**: Explain "why" not "what", keep concise
 
 ### Component Patterns
+
 - Static-first: Build components as static by default
 - Props interface: Always define TypeScript interfaces for component props
 - CSS Scoping: Use Astro's scoped styles or Tailwind classes
 - Performance: Optimize images with Astro's Image component
 
 ### State Management
+
 - Use Nanostores for client-side state
 - Persistent stores for cart, user preferences
 - Computed stores for derived values
 - Keep state minimal and focused
 
 ### Testing Strategy
+
 - Unit tests for utilities and non-UI logic
 - Component tests using Astro Container API
 - Integration tests for API routes
@@ -113,12 +122,14 @@ The project uses Astro's content collections for type-safe content management:
 ## Backend Integration
 
 ### Supabase
+
 - Database client configuration in `src/lib/supabase.ts`
 - Row Level Security (RLS) for data protection
 - Authentication with email/password and social providers
 - Real-time subscriptions for dynamic content
 
 ### Stripe
+
 - Payment processing for online orders
 - Webhook handling for payment events
 - Product catalog synchronization
@@ -127,12 +138,14 @@ The project uses Astro's content collections for type-safe content management:
 ## Performance Considerations
 
 ### Static Site Generation
+
 - Pre-render all pages at build time when possible
 - Use dynamic imports for heavy components
 - Implement image optimization with Astro's Image component
 - Generate sitemaps and RSS feeds automatically
 
 ### Bundle Optimization
+
 - Code splitting with dynamic imports
 - Conditional script loading based on features
 - Minimize client-side JavaScript
@@ -141,6 +154,7 @@ The project uses Astro's content collections for type-safe content management:
 ## SEO & Accessibility
 
 ### SEO Implementation
+
 - Structured data (JSON-LD) for rich snippets
 - Open Graph and Twitter Card meta tags
 - Canonical URLs and proper redirects
@@ -148,6 +162,7 @@ The project uses Astro's content collections for type-safe content management:
 - RSS feeds for content
 
 ### Accessibility
+
 - Semantic HTML structure
 - ARIA labels and roles
 - Keyboard navigation support
@@ -157,6 +172,7 @@ The project uses Astro's content collections for type-safe content management:
 ## Deployment & Environment
 
 ### Environment Variables
+
 ```bash
 # Supabase
 PUBLIC_SUPABASE_URL=your_supabase_url
@@ -172,6 +188,7 @@ PUBLIC_SITE_URL=https://your-domain.com
 ```
 
 ### Build Configuration
+
 - `astro.config.mjs` for framework configuration
 - Hybrid output mode for static + SSR when needed
 - Image optimization and domain allowlisting
@@ -182,6 +199,7 @@ PUBLIC_SITE_URL=https://your-domain.com
 This project uses Agent OS standards with specialized agents and commands available:
 
 ### Available Agents
+
 - `astro-expert` - Astro framework expertise
 - `tailwind-expert` - Tailwind CSS styling
 - `supabase-expert` - Database and authentication
@@ -190,6 +208,7 @@ This project uses Agent OS standards with specialized agents and commands availa
 - `test-runner` - Testing execution and analysis
 
 ### Custom Commands
+
 - `/analyze-product` - Product requirements analysis
 - `/plan-product` - Development planning
 - `/create-tasks` - Task breakdown

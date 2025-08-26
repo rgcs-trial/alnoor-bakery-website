@@ -1,5 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import tailwindcssPostcss from '@tailwindcss/postcss';
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
@@ -7,11 +9,24 @@ export default defineConfig({
   output: 'static', // Static site generation
   trailingSlash: 'ignore',
   build: {
-    format: 'directory'
+    format: 'directory',
   },
+  integrations: [
+    sitemap({
+      changefreq: 'weekly',
+      priority: 0.7,
+      lastmod: new Date(),
+      entryLimit: 10000,
+    }),
+  ],
   vite: {
     optimizeDeps: {
-      exclude: []
-    }
-  }
+      exclude: [],
+    },
+    css: {
+      postcss: {
+        plugins: [tailwindcssPostcss],
+      },
+    },
+  },
 });
