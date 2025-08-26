@@ -1,0 +1,17 @@
+{
+  "name": "alnoor-bakery-website",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "astro": "^5.13.3",
+    "typescript": "^5.9.2"
+  }
+}
