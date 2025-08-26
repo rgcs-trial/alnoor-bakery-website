@@ -30,7 +30,7 @@
 ### Features
 
 - [ ] Landing Page - Hero section with bakery introduction and key CTAs `M`
-- [ ] Basic Navigation - Header with menu links and contact information `S`  
+- [ ] Basic Navigation - Header with menu links and contact information `S`
 - [ ] About Us Page - Bakery story, values, and halal commitment `M`
 - [ ] Contact Us Page - Phone, address, hours, and contact form `M`
 - [ ] Footer Component - Contact info, social links, and business hours `S`
@@ -91,7 +91,7 @@
 
 - [ ] Multi-language Support - Arabic/English language toggle `XL`
 - [ ] Customer Reviews Section - Testimonials and feedback display `L`
-- [ ] Loyalty Program Integration - Points system connection `L` 
+- [ ] Loyalty Program Integration - Points system connection `L`
 - [ ] Catering Services Page - Large order and event catering information `M`
 - [ ] Online Reservation System - Table booking functionality `XL`
 - [ ] Newsletter Signup - Email marketing integration `M`
