@@ -4,26 +4,30 @@ import '../styles/global.css';
 export interface Props {
   title: string;
   description?: string;
-  lang?: string;
-  canonical?: string;
-  ogImage?: string;
-  ogType?: string;
+  image?: string;
+  canonicalUrl?: string;
+  lang?: 'en' | 'ar';
+  dir?: 'ltr';
+  noindex?: boolean;
+  schemaType?: 'WebSite' | 'LocalBusiness' | 'Product';
 }
 
 const {
   title,
   description = 'AL-NOOR BAKERY HALAL - Authentic halal baked goods and meals. Discover our delicious menu items with detailed information and easy ordering.',
+  image = '/images/og-default.jpg',
+  canonicalUrl,
   lang = 'en',
-  canonical,
-  ogImage = '/images/og-default.jpg',
-  ogType = 'website',
+  dir = 'ltr',
+  noindex = false,
+  schemaType = 'LocalBusiness',
 } = Astro.props;
 
-const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site).href;
+const canonicalURL = canonicalUrl || new URL(Astro.url.pathname, Astro.site).href;
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html lang={lang} dir={dir}>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -40,11 +44,11 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site).href;
     <meta name="description" content={description} />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content={ogType} />
+    <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:image" content={image} />
     <meta property="og:locale" content={lang === 'ar' ? 'ar_SA' : 'en_US'} />
     <meta property="og:site_name" content="AL-NOOR BAKERY HALAL" />
 
@@ -53,10 +57,10 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site).href;
     <meta property="twitter:url" content={canonicalURL} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={ogImage} />
+    <meta property="twitter:image" content={image} />
 
     <!-- Additional SEO -->
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
     <meta name="theme-color" content="#f59e0b" />
 
     <!-- Preconnect for performance -->
@@ -65,11 +69,19 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site).href;
 
     <!-- Google Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
-  <body>
-    <slot />
+  <body class="font-sans antialiased">
+    <header role="banner">
+      <!-- Navigation Component -->
+    </header>
+    <main id="main-content" role="main">
+      <slot />
+    </main>
+    <footer role="contentinfo">
+      <!-- Footer Component -->
+    </footer>
   </body>
 </html>

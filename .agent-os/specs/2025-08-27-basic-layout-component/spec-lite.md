@@ -1,0 +1,3 @@
+# Spec Summary (Lite)
+
+Create a foundational Astro layout component for the halal bakery website that provides mobile-first responsive design, clean English typography, and comprehensive SEO optimization. The component will serve as the base template for all pages, handling common elements like navigation, footer, meta tags, and structured data while ensuring optimal performance and accessibility standards.
