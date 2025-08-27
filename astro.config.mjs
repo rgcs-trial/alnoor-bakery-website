@@ -7,7 +7,20 @@ export default defineConfig({
   site: 'https://alnoor-bakery.vercel.app',
   output: 'static',
   trailingSlash: 'ignore',
-  vite: {
-    plugins: [tailwind()],
+  build: {
+    inlineStylesheets: 'auto',
+    assets: '_astro',
   },
+  vite: {
+    plugins: [/** @type {any} */ (tailwind())],
+    build: {
+      cssCodeSplit: true,
+      rollupOptions: {
+        output: {
+          assetFileNames: '_astro/[name].[hash][extname]'
+        }
+      }
+    }
+  },
+  compressHTML: true,
 });
