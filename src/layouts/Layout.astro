@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css';
+
 export interface Props {
   title: string;
   description?: string;
@@ -8,13 +10,13 @@ export interface Props {
   ogType?: string;
 }
 
-const { 
-  title, 
-  description = "AL-NOOR BAKERY HALAL - Authentic halal baked goods and meals. Discover our delicious menu items with detailed information and easy ordering.",
-  lang = "en",
+const {
+  title,
+  description = 'AL-NOOR BAKERY HALAL - Authentic halal baked goods and meals. Discover our delicious menu items with detailed information and easy ordering.',
+  lang = 'en',
   canonical,
-  ogImage = "/images/og-default.jpg",
-  ogType = "website"
+  ogImage = '/images/og-default.jpg',
+  ogType = 'website',
 } = Astro.props;
 
 const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site).href;
@@ -28,38 +30,44 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site).href;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    
+
     <!-- Canonical URL -->
     <link rel="canonical" href={canonicalURL} />
-    
+
     <!-- Primary Meta Tags -->
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content={ogType} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
-    <meta property="og:locale" content={lang === "ar" ? "ar_SA" : "en_US"} />
+    <meta property="og:locale" content={lang === 'ar' ? 'ar_SA' : 'en_US'} />
     <meta property="og:site_name" content="AL-NOOR BAKERY HALAL" />
-    
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={canonicalURL} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={ogImage} />
-    
+
     <!-- Additional SEO -->
     <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#10B981" />
-    
+    <meta name="theme-color" content="#f59e0b" />
+
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <slot />
